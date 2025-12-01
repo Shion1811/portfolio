@@ -12,6 +12,7 @@
   --font-size-h3: 22px;
   --font-size-h4: 20px;
   --font-size-p: 18px;
+  --font-size-small: 15px;
 
   --font-family-title: "Story Script", sans-serif;
   --font-family-body: "Kiwi Maru", sans-serif;
@@ -51,6 +52,10 @@ body {
 .p {
   font-family: var(--font-family-body);
   font-size: var(--font-size-p);
+}
+.small {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-small);
 }
 
 .underline {
@@ -110,4 +115,36 @@ body {
     height: 1px;
     background: var(--color-black);
   }
+}
+.contact-hover:hover {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  transition: all 0.3s ease;
+}
+.dodge-ball-image {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.dodge-ball-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/dodge-ball.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.dodge-ball-image > * {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
 }
