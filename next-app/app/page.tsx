@@ -5,7 +5,7 @@ export default function top() {
   const router = useRouter();
   return (
     <div className="bg-beige w-full h-full">
-      <div className="w-full px-16">
+      <div className="w-full px-20">
         <header className="flex items-center justify-between">
           <div className="underline w-[180px] h-fit px-2 py-1 text-center">
             <button
@@ -40,6 +40,42 @@ export default function top() {
             alt="ヘッダー画像"
             className="w-[750px] h-[600px] rounded-[16px] absolute right-0"
           />
+        </section>
+        <section className="w-full px-45 flex flex-col gap-3 my-8">
+          <h1 className="h1 w-fit h-fit my-4 m-auto flex gap-2">
+            <div className="title-center-line w-[50px]"></div>
+            About
+            <div className="title-center-line w-[50px]"></div>
+          </h1>
+          <div className="flex gap-2 items-end">
+            <h2 className="h2 font-bold">Suzuki Shion</h2>
+            <h3 className="h3">鈴木至恩</h3>
+          </div>
+          <p className="p">2006年 1月 1日</p>
+          <div className="p">
+            <p>バンタンに入った理由</p>
+            <p>
+              友達がバンタンを通っていて、尊敬したので自分もバンタンに入学することに決めました。
+            </p>
+          </div>
+          <div className="p">
+            1年生では<span className="tracking-wider">HTML</span> ,
+            <span className="tracking-wider">CSS</span> ,
+            <span className="tracking-wider">python</span>
+            でコーディングを学びつつ、
+            <span className="tracking-wider">figma</span> ,
+            でデザインも一緒に学び学校のイベントを参加して、1年生の後期
+            <span className="tracking-wider">Next.js</span>を学び始めました。
+          </div>
+          <div className="p">
+            2年生では1年生で学んだ知識を培い簡単なToDoアプリを作ったり、APIも学びbackendとのAPI通信を学びました。
+          </div>
+          <div className="p">3年生 coming soon...</div>
+          <div className="flex justify-end w-full">
+            <button className="w-fit h-fit p-2 bg-blue text-white rounded-[4px]">
+              about ページへ
+            </button>
+          </div>
         </section>
       </div>
     </div>
