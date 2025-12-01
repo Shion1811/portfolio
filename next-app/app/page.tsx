@@ -1,30 +1,11 @@
-"use client";
-import { useRouter } from "next/navigation";
-
+import Header from "./components/header";
+import SectionTitle from "./components/section-title";
 export default function top() {
-  const router = useRouter();
   return (
     <div className="bg-beige w-full h-full">
       <div className="w-full px-20">
-        <header className="flex items-center justify-between">
-          <div className="underline w-[180px] h-fit px-2 py-1 text-center">
-            <button
-              className="title color-blac w-full h-full"
-              onClick={() => router.push("/")}
-            >
-              Suzuki Shion
-            </button>
-          </div>
-          <div className="flex items-center gap-2">
-            {/* aboutページでは自分のプロフィール情報（趣味、スキル、経歴など）を表示 */}
-            <h2 className="h2 w-fit px-2 py-1">about</h2>
-            {/* worksページでは自分が作成した作品を表示 */}
-            <h2 className="h2 w-fit px-2 py-1">works</h2>
-            {/* contactページでは自分への連絡先を表示 */}
-            <h2 className="h2 w-fit px-2 py-1">contact</h2>
-          </div>
-        </header>
-        <section className="flex items-center relative h-[800px] w-[1150px] mx-auto">
+        <Header />
+        <section className="flex items-center relative h-[800px] w-[1150px] mx-auto mt-14">
           <div className="absolute left-0 z-10">
             <div className="font-family-title text-[80px] w-[800px] text-blue font-bold">
               Suzuki Shion 's
@@ -42,14 +23,10 @@ export default function top() {
           />
         </section>
         <section className="w-full px-45 flex flex-col gap-3 my-8">
-          <h1 className="h1 w-fit h-fit my-4 m-auto flex gap-2">
-            <div className="title-center-line w-[50px]"></div>
-            About
-            <div className="title-center-line w-[50px]"></div>
-          </h1>
+          <SectionTitle title="About" />
           <div className="flex gap-2 items-end">
-            <h2 className="h2 font-bold">Suzuki Shion</h2>
-            <h3 className="h3">鈴木至恩</h3>
+            <h4 className="h4 font-bold">Suzuki Shion</h4>
+            <p className="p">鈴木至恩</p>
           </div>
           <p className="p">2006年 1月 1日</p>
           <div className="p">
@@ -76,6 +53,59 @@ export default function top() {
               about ページへ
             </button>
           </div>
+        </section>
+        <section className="w-full px-45 mx-auto flex flex-col gap-3 my-8">
+          <SectionTitle title="Works" />
+          <div className="flex justify-between">
+            {Array.from({ length: 3 }, (_, index) => (
+              <div
+                key={index}
+                className="w-[325px] border-black border-1 rounded-md p-2 flex flex-col gap-2"
+              >
+                <h3 className="h3">appName</h3>
+                <p className="p">企画概要</p>
+                <div className="small text-white flex gap-2">
+                  {/* ここのタグは design, html, css, javascript, next.js, python, backend, figmaを選択式にして表示させる */}
+                  <p className="bg-blue w-fit rounded-sm px-2 py-1">design</p>
+                  <p className="bg-blue w-fit rounded-sm px-2 py-1">Next.js</p>
+                  <p className="bg-blue w-fit rounded-sm px-2 py-1">Figma</p>
+                </div>
+                <img
+                  src="/english-image.jpeg"
+                  alt="英会話アプリの画像"
+                  className="w-full h-[200px] object-cover rounded-md"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-end w-full">
+            <button className="w-fit h-fit p-2 bg-blue text-white rounded-[4px]">
+              works ページへ
+            </button>
+          </div>
+        </section>
+        <section className="w-full px-45 mx-auto flex flex-col gap-3 my-8">
+          <SectionTitle title="Contact" />
+          <div className="flex justify-around my-4">
+            <div className="border-b-[0.3px] border-black w-40 h-fit py-1 text-center bg-white contact-hover">
+              <a href="https://github.com/Shion1811">
+                <h4 className="h4">github</h4>
+              </a>
+            </div>
+            <div className="border-b-[0.3px] border-black w-40 h-fit py-1 text-center bg-white contact-hover">
+              <a href="mailto:shion48691811@gmail.com">
+                <h4 className="h4">gmail</h4>
+              </a>
+            </div>
+            <div className="border-b-[0.3px] border-black w-40 h-fit py-1 text-center bg-white contact-hover">
+              <a href="https://www.wantedly.com/id/shion_2006">
+                <h4 className="h4">wantedly</h4>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section className="w-full">
+          <p className="small text-center">© 2025 Suzuki Shion</p>
         </section>
       </div>
     </div>
