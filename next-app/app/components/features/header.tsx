@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 export default function Header() {
   const router = useRouter();
   return (
-    <header className="sticky top-0 left-0 w-full px-20 mx-auto z-50">
+    <header className="sticky top-0 left-0 w-full px-20 py-3 mx-auto z-50 bg-beige border-b-[0.3px] border-white">
       <div className="flex items-center justify-between">
         <div className="underline w-[240px] h-fit px-2 py-1 text-center">
           <button
