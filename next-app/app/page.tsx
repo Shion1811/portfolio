@@ -1,5 +1,5 @@
-import Header from "./components/header";
-import SectionTitle from "./components/section-title";
+import Header from "./components/features/header";
+import SectionTitle from "./components/features/section-title";
 export default function top() {
   return (
     <div className="bg-beige w-full h-full">
