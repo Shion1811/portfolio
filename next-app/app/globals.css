@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-beige: #eee0cc;
+  --color-black: #050505;
+  --color-white: #f3f3f3;
+  --color-blue: #004b94;
+
+  --font-size-title: 28px;
+  --font-size-h1: 24px;
+  --font-size-h2: 22px;
+  --font-size-h3: 20px;
+  --font-size-h4: 18px;
+  --font-size-p: 16px;
+
+  --font-family-title: "Story Script", sans-serif;
+  --font-family-body: "Kiwi Maru", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--color-beige);
+  color: var(--color-black);
+}
+.title {
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-title);
+}
+.h1 {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-h1);
+}
+.h2 {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-h2);
+}
+.h3 {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-h3);
+}
+.h4 {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-h4);
+}
+.p {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-p);
+}
+
+.underline {
+  position: relative;
+}
+.underline:before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  bottom: 5px;
+  width: 0%;
+  height: 8px;
+  background: var(--color-black);
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--color-black) 5%,
+    var(--color-black) 20%,
+    rgba(5, 5, 5, 0.9) 40%,
+    rgba(5, 5, 5, 0.95) 50%,
+    rgba(5, 5, 5, 0.9) 60%,
+    var(--color-black) 80%,
+    var(--color-black) 95%,
+    transparent 100%
+  );
+  clip-path: polygon(
+    0% 100%,
+    3% 85%,
+    8% 60%,
+    15% 45%,
+    25% 40%,
+    35% 45%,
+    45% 55%,
+    55% 45%,
+    65% 55%,
+    75% 38%,
+    85% 40%,
+    92% 45%,
+    97% 55%,
+    100% 100%
+  );
+  border-radius: 1px 4px 1px 4px;
+
+  width: 80%;
+}
