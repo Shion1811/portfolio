@@ -1,0 +1,7 @@
+services:
+  app:
+    build: ./
+    volumes:
+      - .:/app
+    ports:
+      - 3939:3000
