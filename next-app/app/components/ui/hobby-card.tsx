@@ -7,10 +7,10 @@ interface HobbyCardProps {
 export default function HobbyCard({ title, image, onClick }: HobbyCardProps) {
   return (
     <button
-      className="hobby-card-image border-blue border-1 text-black rounded-md"
+      className="sm:hobby-card-image border-blue border-1 text-black rounded-md hidden sm:block w-fit"
       onClick={onClick}
     >
-      <div className=" w-[300px] h-[150px] flex items-center justify-center relative">
+      <div className="w-[20vw] h-[150px] flex items-center justify-center relative">
         <img
           src={image}
           alt={`${title}の画像`}

@@ -8,15 +8,15 @@ export default function top() {
   const router = useRouter();
   return (
     <div className="bg-beige w-full h-full">
-      <div className="w-full px-[5%] mx-auto">
+      <div className="w-full sm:px-[5%] mx-auto">
         <Header />
-        <section className="flex items-center relative h-[800px] w-full max-w-[1150px] mx-auto mt-14">
+        <section className="flex items-center relative sm:h-[800px] h-[400px] w-[90%] max-w-[1150px] mx-auto mt-16 sm:mt-26">
           <div className="absolute left-0 z-10">
-            <div className="font-family-title text-[80px] w-[800px] text-blue font-bold box-shadow-1">
+            <div className="font-family-title sm:text-[80px] text-[40px] sm:w-[800px] w-[300px] text-blue font-bold box-shadow-1">
               Suzuki Shion 's
             </div>
             <div className="relative">
-              <p className="font-family-title text-[80px] absolute top-0 left-[200px] text-blue font-bold box-shadow-1">
+              <p className="font-family-title sm:text-[80px] text-[40px] absolute top-0 sm:left-[200px] left-[100px] text-blue font-bold box-shadow-1">
                 Portfolio
               </p>
             </div>
@@ -66,7 +66,7 @@ export default function top() {
         </section>
         <section className="w-full px-[10%] mx-auto flex flex-col gap-3 my-8">
           <SectionTitle title="Works" />
-          <div className="grid grid-cols-3 justify-between gap-8 my-8mx-auto">
+          <div className="grid grid-cols-1 xl:grid-cols-3 flex-col justify-between gap-8 my-8mx-auto">
             {Array.from({ length: 3 }, (_, index) => (
               <Works
                 key={index}
@@ -92,19 +92,19 @@ export default function top() {
         >
           <SectionTitle title="Contact" />
           <div className="flex justify-around my-4">
-            <div className="border-b-[0.3px] border-black w-40 h-fit py-1 text-center bg-white contact-hover">
+            <div className="sm:border-b-[0.3px] sm:border-black sm:w-40 w-fit h-fit px-2 py-1 text-center sm:bg-white bg-blue contact-hover">
               <a href="https://github.com/Shion1811">
-                <h4 className="h4">github</h4>
+                <h4 className="h4 sm:text-black text-white">github</h4>
               </a>
             </div>
-            <div className="border-b-[0.3px] border-black w-40 h-fit py-1 text-center bg-white contact-hover">
+            <div className="sm:border-b-[0.3px] sm:border-black sm:w-40 w-fit h-fit px-2 py-1 text-center sm:bg-white bg-blue contact-hover">
               <a href="mailto:shion48691811@gmail.com">
-                <h4 className="h4">gmail</h4>
+                <h4 className="h4 sm:text-black text-white">gmail</h4>
               </a>
             </div>
-            <div className="border-b-[0.3px] border-black w-40 h-fit py-1 text-center bg-white contact-hover">
+            <div className="sm:border-b-[0.3px] sm:border-black sm:w-40 w-fit h-fit px-2 py-1 text-center sm:bg-white bg-blue contact-hover">
               <a href="https://www.wantedly.com/id/shion_2006">
-                <h4 className="h4">wantedly</h4>
+                <h4 className="h4 sm:text-black text-white">wantedly</h4>
               </a>
             </div>
           </div>

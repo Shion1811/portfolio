@@ -9,9 +9,9 @@ export default function about() {
   const router = useRouter();
   return (
     <div className="bg-beige w-full h-full">
-      <div className="w-full px-[5%] mx-auto">
+      <div className="w-full sm:px-[5%] mx-auto">
         <Header />
-        <section className="w-full px-[10%] mx-auto flex flex-col gap-3 my-8">
+        <section className="w-full px-[10%] mx-auto sm:flex flex-col gap-3 my-8 hidden">
           <SectionTitle title="趣味" />
           <div>
             <div className="grid grid-cols-3 gap-4 justify-center my-8">
@@ -43,7 +43,7 @@ export default function about() {
             </div>
           </div>
         </section>
-        <section className="w-full px-[10%] mx-auto flex flex-col gap-3 my-8 py-3">
+        <section className="w-full px-[10%] mx-auto flex flex-col gap-3 my-8 py-3 mt-25 sm:mt-0">
           <div id="dodge-ball">
             <h3 className="h3 text-blue">ドッジボール</h3>
             <p className="p">

@@ -29,6 +29,17 @@
     --font-size-small: 15px;
   }
 }
+@media (max-width: 376px) {
+  :root {
+    --font-size-title: 24px;
+    --font-size-h1: 22px;
+    --font-size-h2: 20px;
+    --font-size-h3: 18px;
+    --font-size-h4: 16px;
+    --font-size-p: 14px;
+    --font-size-small: 12px;
+  }
+}
 
 body {
   background: var(--color-beige);

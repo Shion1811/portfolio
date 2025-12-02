@@ -5,12 +5,12 @@ import Works from "../components/ui/works";
 export default function works() {
   return (
     <div className="bg-beige w-full h-full">
-      <div className="w-full px-[5%] mx-auto">
+      <div className="w-full sm:px-[5%] mx-auto">
         <Header />
         <div className="w-full px-[10%] mx-auto">
-          <section className="w-full flex flex-col gap-3 my-8">
+          <section className="w-full flex flex-col gap-3 my-8 mt-20 sm:mt-30">
             <SectionTitle title="frontend" />
-            <div className="grid grid-cols-3 justify-between gap-8 my-8mx-auto">
+            <div className="grid grid-cols-1 xl:grid-cols-3 flex-col justify-between gap-8 my-8mx-auto lg:grid-cols-2">
               {Array.from({ length: 6 }, (_, index) => (
                 <Works
                   key={index}
@@ -22,7 +22,7 @@ export default function works() {
               ))}
             </div>
             <SectionTitle title="UI/UX" />
-            <div className="grid grid-cols-3 justify-between gap-8 my-8mx-auto">
+            <div className="grid grid-cols-1 xl:grid-cols-3 flex-col justify-between gap-8 my-8mx-auto lg:grid-cols-2">
               {Array.from({ length: 6 }, (_, index) => (
                 <Works
                   key={index}
