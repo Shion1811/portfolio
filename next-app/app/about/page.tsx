@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import Header from "../components/features/header";
 import SectionTitle from "../components/features/section-title";
 import HobbyCard from "../components/ui/hobby-card";
+import Github from "../components/features/github";
 // aboutページでは自分のプロフィール情報（趣味、スキル、経歴など）を表示
 export default function about() {
   const router = useRouter();
@@ -79,8 +80,9 @@ export default function about() {
             </p>
           </div>
         </section>
-        <section>
+        <section className="w-full px-45 mx-auto flex flex-col gap-3 my-8 py-3">
           <SectionTitle title="スキル" />
+          <Github />
         </section>
       </div>
     </div>
