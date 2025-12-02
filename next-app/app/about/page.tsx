@@ -4,6 +4,7 @@ import Header from "../components/features/header";
 import SectionTitle from "../components/features/section-title";
 import HobbyCard from "../components/ui/hobby-card";
 import Github from "../components/features/github";
+import Footer from "../components/features/footer";
 // aboutページでは自分のプロフィール情報（趣味、スキル、経歴など）を表示
 export default function about() {
   const router = useRouter();
@@ -84,6 +85,7 @@ export default function about() {
           <SectionTitle title="スキル" />
           <Github />
         </section>
+        <Footer />
       </div>
     </div>
   );
