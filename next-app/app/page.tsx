@@ -1,5 +1,7 @@
 import Header from "./components/features/header";
 import SectionTitle from "./components/features/section-title";
+import Footer from "./components/features/footer";
+import Works from "./components/ui/works";
 export default function top() {
   return (
     <div className="bg-beige w-full h-full">
@@ -58,24 +60,13 @@ export default function top() {
           <SectionTitle title="Works" />
           <div className="flex justify-between">
             {Array.from({ length: 3 }, (_, index) => (
-              <div
+              <Works
                 key={index}
-                className="w-[325px] border-black border-1 rounded-md p-2 flex flex-col gap-2"
-              >
-                <h3 className="h3">appName</h3>
-                <p className="p">企画概要</p>
-                <div className="small text-white flex gap-2">
-                  {/* ここのタグは design, html, css, javascript, next.js, python, backend, figmaを選択式にして表示させる */}
-                  <p className="bg-blue w-fit rounded-sm px-2 py-1">design</p>
-                  <p className="bg-blue w-fit rounded-sm px-2 py-1">Next.js</p>
-                  <p className="bg-blue w-fit rounded-sm px-2 py-1">Figma</p>
-                </div>
-                <img
-                  src="/english-image.jpeg"
-                  alt="英会話アプリの画像"
-                  className="w-full h-[200px] object-cover rounded-md"
-                />
-              </div>
+                title="appName"
+                overview="企画概要"
+                tags={["design", "Next.js", "Figma"]}
+                img="/english-image.jpeg"
+              />
             ))}
           </div>
           <div className="flex justify-end w-full">
@@ -104,9 +95,7 @@ export default function top() {
             </div>
           </div>
         </section>
-        <section className="w-full">
-          <p className="small text-center">© 2025 Suzuki Shion</p>
-        </section>
+        <Footer />
       </div>
     </div>
   );
