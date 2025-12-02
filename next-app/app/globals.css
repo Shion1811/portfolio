@@ -6,22 +6,27 @@
   --color-white: #f3f3f3;
   --color-blue: #004b94;
 
-  --font-size-title: 30px;
+  --font-size-title: 26px;
   --font-size-h1: 24px;
-  --font-size-h2: 24px;
-  --font-size-h3: 22px;
-  --font-size-h4: 20px;
-  --font-size-p: 18px;
-  --font-size-small: 15px;
+  --font-size-h2: 22px;
+  --font-size-h3: 20px;
+  --font-size-h4: 18px;
+  --font-size-p: 16px;
+  --font-size-small: 14px;
 
   --font-family-title: "Story Script", sans-serif;
   --font-family-body: "Kiwi Maru", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (min-width: 1281px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-size-title: 30px;
+    --font-size-h1: 24px;
+    --font-size-h2: 24px;
+    --font-size-h3: 22px;
+    --font-size-h4: 20px;
+    --font-size-p: 18px;
+    --font-size-small: 15px;
   }
 }
 
@@ -153,4 +158,7 @@ body {
 }
 .box-shadow {
   text-shadow: 0 0 10px 0 rgba(0, 75, 148, 1);
+}
+.box-shadow-1 {
+  text-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }

@@ -1,19 +1,22 @@
+"use client";
 import Header from "./components/features/header";
 import SectionTitle from "./components/features/section-title";
 import Footer from "./components/features/footer";
 import Works from "./components/ui/works";
+import { useRouter } from "next/navigation";
 export default function top() {
+  const router = useRouter();
   return (
     <div className="bg-beige w-full h-full">
-      <div className="w-full px-20">
+      <div className="w-full px-[5%] mx-auto">
         <Header />
-        <section className="flex items-center relative h-[800px] w-[1150px] mx-auto mt-14">
+        <section className="flex items-center relative h-[800px] w-full max-w-[1150px] mx-auto mt-14">
           <div className="absolute left-0 z-10">
-            <div className="font-family-title text-[80px] w-[800px] text-blue font-bold">
+            <div className="font-family-title text-[80px] w-[800px] text-blue font-bold box-shadow-1">
               Suzuki Shion 's
             </div>
             <div className="relative">
-              <p className="font-family-title text-[80px] absolute top-0 left-[200px] text-blue font-bold">
+              <p className="font-family-title text-[80px] absolute top-0 left-[200px] text-blue font-bold box-shadow-1">
                 Portfolio
               </p>
             </div>
@@ -21,10 +24,12 @@ export default function top() {
           <img
             src="/header-img.png"
             alt="ヘッダー画像"
-            className="w-[750px] h-[600px] rounded-[16px] absolute right-0"
+            className=" w-auto h-auto rounded-[16px] absolute right-0 object-cover"
+            width={500}
+            height={400}
           />
         </section>
-        <section className="w-full px-45 flex flex-col gap-3 my-8">
+        <section className="w-full px-[10%] flex flex-col gap-3 my-8">
           <SectionTitle title="About" />
           <div className="flex gap-2 items-end">
             <h4 className="h4 font-bold">Suzuki Shion</h4>
@@ -51,14 +56,17 @@ export default function top() {
           </div>
           <div className="p">3年生 coming soon...</div>
           <div className="flex justify-end w-full">
-            <button className="w-fit h-fit p-2 bg-blue text-white rounded-[4px]">
+            <button
+              className="w-fit h-fit p-2 bg-blue text-white rounded-[4px]"
+              onClick={() => router.push("/about")}
+            >
               about ページへ
             </button>
           </div>
         </section>
-        <section className="w-full px-45 mx-auto flex flex-col gap-3 my-8">
+        <section className="w-full px-[10%] mx-auto flex flex-col gap-3 my-8">
           <SectionTitle title="Works" />
-          <div className="flex justify-between">
+          <div className="grid grid-cols-3 justify-between gap-8 my-8mx-auto">
             {Array.from({ length: 3 }, (_, index) => (
               <Works
                 key={index}
@@ -70,12 +78,18 @@ export default function top() {
             ))}
           </div>
           <div className="flex justify-end w-full">
-            <button className="w-fit h-fit p-2 bg-blue text-white rounded-[4px]">
+            <button
+              className="w-fit h-fit p-2 bg-blue text-white rounded-[4px]"
+              onClick={() => router.push("/works")}
+            >
               works ページへ
             </button>
           </div>
         </section>
-        <section className="w-full px-45 mx-auto flex flex-col gap-3 my-8">
+        <section
+          className="w-full px-[10%] mx-auto flex flex-col gap-3 my-8"
+          id="contact"
+        >
           <SectionTitle title="Contact" />
           <div className="flex justify-around my-4">
             <div className="border-b-[0.3px] border-black w-40 h-fit py-1 text-center bg-white contact-hover">

@@ -8,40 +8,31 @@ export default function Header() {
       <div className="flex items-center justify-between">
         <div className="underline w-[240px] h-fit px-2 py-1 text-center">
           <button
-            className="title color-blac w-full h-full"
+            className="title text-black w-full h-full font-family-title"
             onClick={() => router.push("/")}
           >
             Suzuki Shion
           </button>
         </div>
         <div className="flex items-center gap-2">
-          {/* aboutページでは自分のプロフィール情報（趣味、スキル、経歴など）を表示 */}
           <button
             onClick={() => router.push("/about")}
             className="h2 w-fit px-2 py-1"
           >
             <h2 className="h2 w-fit px-2 py-1">about</h2>
           </button>
-          {/* worksページでは自分が作成した作品とgithubから使った言語と割合を表示 */}
           <button
             onClick={() => router.push("/works")}
             className="h2 w-fit px-2 py-1"
           >
             <h2 className="h2 w-fit px-2 py-1">works</h2>
           </button>
-          {/* contactページでは自分への連絡先を表示 */}
           <button
-            onClick={() => router.push("/contact")}
+            onClick={() => (window.location.href = "/#contact")}
             className="h2 w-fit px-2 py-1"
           >
             <h2 className="h2 w-fit px-2 py-1">contact</h2>
           </button>
-          {/* <button
-            onClick={() => router.push("/about")}
-            className="h2 w-fit px-2 py-1"
-          >
-            <h2 className="h2 w-fit px-2 py-1">about</h2>
-          </button> */}
         </div>
       </div>
     </header>
