@@ -9,8 +9,8 @@ export default function about() {
   const router = useRouter();
   return (
     <div className="bg-beige w-full h-full">
-      <div className="w-full sm:px-[5%] mx-auto">
-        <Header />
+      <Header />
+      <div className="w-full sm:px-0 px-5 mx-auto">
         <section className="w-full px-[10%] mx-auto sm:flex flex-col gap-3 my-8 hidden">
           <SectionTitle title="趣味" />
           <div>

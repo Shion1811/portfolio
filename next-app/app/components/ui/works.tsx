@@ -1,3 +1,5 @@
+"use client";
+import { useRouter } from "next/navigation";
 interface WorksProps {
   title: string;
   overview: string;
@@ -5,8 +7,9 @@ interface WorksProps {
   img: string;
 }
 export default function Works({ title, overview, tags, img }: WorksProps) {
+  const router = useRouter();
   return (
-    <div>
+    <button className="w-full" onClick={() => router.push("/work-detail")}>
       <div className="w-full border-black border-1 rounded-md p-2 flex lg:flex-col gap-2">
         <div className="flex flex-col gap-2 sm:w-full w-[50%] mx-auto">
           <h3 className="h3">{title}</h3>
@@ -26,9 +29,9 @@ export default function Works({ title, overview, tags, img }: WorksProps) {
         <img
           src={img}
           alt="英会話アプリの画像"
-          className="md:w-fit w-[130px] lg:h-[200px] h-full object-cover rounded-md"
+          className=" w-[130px] lg:w-full lg:h-[300px] h-[200px] object-cover rounded-md"
         />
       </div>
-    </div>
+    </button>
   );
 }

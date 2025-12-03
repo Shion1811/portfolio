@@ -8,7 +8,7 @@ export default function top() {
   const router = useRouter();
   return (
     <div className="bg-beige w-full h-full">
-      <div className="w-full sm:px-[5%] mx-auto">
+      <div className="w-full sm:px-0 px-5 mx-auto">
         <Header />
         <section className="flex items-center relative sm:h-[800px] h-[400px] w-[90%] max-w-[1150px] mx-auto mt-16 sm:mt-26">
           <div className="absolute left-0 z-10">
@@ -66,16 +66,26 @@ export default function top() {
         </section>
         <section className="w-full px-[10%] mx-auto flex flex-col gap-3 my-8">
           <SectionTitle title="Works" />
-          <div className="grid grid-cols-1 xl:grid-cols-3 flex-col justify-between gap-8 my-8mx-auto">
-            {Array.from({ length: 3 }, (_, index) => (
-              <Works
-                key={index}
-                title="appName"
-                overview="企画概要"
-                tags={["design", "Next.js", "Figma"]}
-                img="/english-image.jpeg"
-              />
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 flex-col justify-between gap-8 my-8mx-auto">
+            {Array.from(
+              {
+                length:
+                  window.innerWidth > 1280
+                    ? 3
+                    : window.innerWidth > 768
+                    ? 4
+                    : 4,
+              },
+              (_, index) => (
+                <Works
+                  key={index}
+                  title="appName"
+                  overview="企画概要"
+                  tags={["design", "Next.js", "Figma"]}
+                  img="/english-image.jpeg"
+                />
+              )
+            )}
           </div>
           <div className="flex justify-end w-full">
             <button

@@ -5,7 +5,7 @@ import Works from "../components/ui/works";
 export default function works() {
   return (
     <div className="bg-beige w-full h-full">
-      <div className="w-full sm:px-[5%] mx-auto">
+      <div className="w-full sm:px-0 px-5 mx-auto">
         <Header />
         <div className="w-full px-[10%] mx-auto">
           <section className="w-full flex flex-col gap-3 my-8 mt-20 sm:mt-30">
