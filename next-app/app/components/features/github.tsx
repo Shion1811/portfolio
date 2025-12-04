@@ -1,8 +1,6 @@
 "use client";
 import { ghResponse } from "@/app/api/gh";
 import { useState, useEffect } from "react";
-import MonoStackedBar from "mono-stacked-bar";
-import "mono-stacked-bar/dist/index.css";
 
 export default function Github() {
   const [gh, setGh] = useState<ghResponse | null>(null);
@@ -20,13 +18,13 @@ export default function Github() {
   console.log(gh);
 
   const languageColors = {
-    JavaScript: "#001c40",
-    TypeScript: "#00224b",
+    JavaScript: "#55c505",
+    TypeScript: "#0076c6",
     Python: "#002856",
-    HTML: "#002d61",
-    CSS: "#00336d",
-    React: "#004082",
-    PHP: "#004a92",
+    HTML: "#dc4925",
+    CSS: "#0391d4",
+    React: "#03d1f7",
+    PHP: "#5766a1",
     その他: "#050505",
   };
 
@@ -85,6 +83,26 @@ export default function Github() {
     const otherLanguage = languages.find((lang) => lang.name === "その他");
     const otherLanguages = languages.filter((lang) => lang.name !== "その他");
 
+    // 現在の合計を計算
+    const currentTotal = languages.reduce(
+      (sum, lang) => sum + lang.percentage,
+      0
+    );
+    const diff = 100 - currentTotal;
+
+    // 不足分を「その他」に追加（「その他」が存在しない場合は新規作成）
+    if (diff > 0) {
+      if (otherLanguage) {
+        otherLanguage.percentage += diff;
+      } else {
+        // 「その他」が存在しない場合は新規作成
+        otherLanguages.push({
+          name: "その他",
+          percentage: diff,
+        });
+      }
+    }
+
     // 「その他」以外を割合の多い順にソートし、「その他」を最後に配置
     return [
       ...otherLanguages.sort((a, b) => b.percentage - a.percentage),
@@ -113,6 +131,29 @@ export default function Github() {
 
   const allLanguages = getAllLanguagePercentages();
 
+  // MonoStackedBarの代わりにカスタムコンポーネントを使用
+  const StackedBar = ({
+    data,
+  }: {
+    data: Array<{ name: string; value: number; color: string }>;
+  }) => {
+    return (
+      <div className="w-full h-[24px] flex overflow-hidden rounded-[12px]">
+        {data.map((item, index) => (
+          <div
+            key={item.name}
+            style={{
+              width: `${item.value}%`,
+              backgroundColor: item.color,
+              fontSize: "14px",
+            }}
+            title={`${item.name}: ${item.value}%`}
+          />
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div className="flex flex-col my-4 w-full flex-wrap">
       <div className="mb-8">
@@ -134,17 +175,13 @@ export default function Github() {
             </span>
           ))}
         </p>
-        <div className="w-full h-[32px]">
-          <MonoStackedBar
-            data={allLanguages.map((language) => ({
-              name: language.name,
-              value: language.percentage,
-              color:
-                languageColors[language.name as keyof typeof languageColors],
-            }))}
-            displayLabels={false}
-          />
-        </div>
+        <StackedBar
+          data={allLanguages.map((language) => ({
+            name: language.name,
+            value: language.percentage,
+            color: languageColors[language.name as keyof typeof languageColors],
+          }))}
+        />
       </div>
     </div>
   );

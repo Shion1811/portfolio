@@ -10,20 +10,12 @@ export default function workDetail() {
     link: Boolean(true) ? "https://apple.com" : undefined,
   };
 
-  const link = works.link ? (
-    <a href={works.link} target="_blank" rel="noopener noreferrer">
-      {works.link}
-    </a>
-  ) : (
-    "No link"
-  );
-
   return (
     <div className="bg-beige w-full h-full">
       <Header />
       <div className="w-full sm:px-0 px-5 mx-auto">
         <section className="w-full px-[10%] mx-auto flex flex-col gap-3 mt-32">
-          <SectionTitle title={works.title} className="sm:text-[34px]!" />
+          <SectionTitle title={works.title} className="text-[34px]!" />
           <div className="flex flex-col gap-3 justify-start">
             <p className="p">{works.overview}</p>
             <div className="flex flex-wrap gap-2">
@@ -36,7 +28,7 @@ export default function workDetail() {
                 </p>
               ))}
             </div>
-            <div className="grid sm:grid-cols-3 grid-cols-1 gap-4 justify-between">
+            <div className="grid lg:grid-cols-3 grid-cols-2 gap-4 justify-between">
               {Array.from({ length: 5 }, (_, index) => (
                 <img
                   key={index}
@@ -46,16 +38,18 @@ export default function workDetail() {
                 />
               ))}
             </div>
-            <div className="flex my-6">
-              <a
-                href={works.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue border-b-[0.3px] border-blue w-fit"
-              >
-                {link}
-              </a>
-            </div>
+            {works.link && (
+              <div className="flex">
+                <a
+                  href={works.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue border-b-[0.3px] border-blue w-fit"
+                >
+                  {works.link}
+                </a>
+              </div>
+            )}
           </div>
         </section>
         <Footer />
