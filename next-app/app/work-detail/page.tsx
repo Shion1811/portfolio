@@ -3,7 +3,7 @@ import Header from "../components/features/header";
 import Footer from "../components/features/footer";
 import SectionTitle from "../components/features/section-title";
 import { getPortfolio, PortfolioResponse } from "@/app/api/admin/portfolio";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface PortfolioWithImages extends PortfolioResponse {
