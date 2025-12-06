@@ -7,28 +7,13 @@ query {
             viewer {
               login
               repositories(first: 100, isFork: false) {
-                totalCount
                 nodes {
                   name
-                  isFork
-                  owner {
-                    __typename
-                    login
-                  }
                   languages(first: 100) {
                     edges {
                       size
                       node {
                         name
-                      }
-                    }
-                  }
-                  defaultBranchRef {
-                    target {
-                      ... on Commit {
-                        history(first: 100) {
-                          totalCount
-                        }
                       }
                     }
                   }

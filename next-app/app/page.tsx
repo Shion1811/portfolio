@@ -73,16 +73,8 @@ export default function top() {
         </section>
         <section className="w-full px-[10%] mx-auto flex flex-col gap-3 my-8">
           <SectionTitle title="Works" />
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 flex-col justify-between gap-8 my-8mx-auto">
-            {Array.from({ length: worksCount }, (_, index) => (
-              <Works
-                key={index}
-                title="appName"
-                overview="企画概要"
-                tags={["design", "Next.js", "Figma"]}
-                img="/english-image.jpeg"
-              />
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 my-8 mx-auto">
+            <Works />
           </div>
           <div className="flex justify-end w-full">
             <button
