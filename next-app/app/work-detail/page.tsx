@@ -21,10 +21,11 @@ export default function workDetail() {
     >
   >({});
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const id = searchParams.get("id");
-
+  const [id, setId] = useState<string | null>(null);
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setId(params.get("id"));
+
     const fetchPortfolio = async () => {
       try {
         const data = await getPortfolio();
